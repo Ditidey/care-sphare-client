@@ -22,10 +22,12 @@ const Header = () => {
                 <ul className='md:flex md:justify-around space-x-6 mx-36 mt-8'>
                     <li><Link to='/'>Home</Link></li>
                     <li><Link to='/donation'>Donation</Link></li>
-                    <li><Link to='/events'>Events</Link></li>
+                    
                     <li><Link to='/blogs'>Blogs</Link></li>
                     <li>
-                        
+                        {
+                            user && <Link to='/volunteerLists'>Events</Link>
+                        }
                     </li>
                 </ul>
                 {

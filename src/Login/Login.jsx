@@ -15,7 +15,7 @@ const Login = () => {
         console.log(data)
         userLogin(data.email, data.password)
         .then(result =>{
-            console.log(result)
+            // console.log(result)
             navigate(from, {replace:true})
         })
         .catch(error =>{

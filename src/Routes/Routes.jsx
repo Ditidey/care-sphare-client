@@ -9,6 +9,7 @@ import CreateCares from "../Admin/CreateCares";
 import Signup from "../Login/Signup";
 import VolunteerLists from "../Admin/VolunteerLists";
 import ProtectedRoute from "./ProtectedRoute";
+import UpdateList from "../Admin/UpdateList";
 
 const router = createBrowserRouter([
     {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
             {
                 path: '/volunteerLists',
                 element:  <VolunteerLists></VolunteerLists>
+            },
+            {
+                path: '/update/:id',
+                element: <UpdateList></UpdateList>,
+                loader: ({params})=>fetch(`http://localhost:5000/registerLists/${params.id}`)
             },
             {
                 path: '/signup',

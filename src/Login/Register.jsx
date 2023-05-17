@@ -7,7 +7,7 @@ import { contextProvider } from '../AuthProvider';
 
 const Register = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const id = useParams();
+   
     const event = useLoaderData();
     const {_id, title, photo, date, description} = event;
     const {user} = useContext(contextProvider);
@@ -21,7 +21,7 @@ const Register = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result)
+                // console.log(result)
                 if (result.insertedId) {
                     Swal.fire({
                         title: 'Successful!',
